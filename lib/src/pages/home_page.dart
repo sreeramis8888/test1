@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Brand App'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 14, 26, 48),
+        backgroundColor: Color.fromARGB(255, 109, 87, 87),
       ),
       body: Column(
         children: [
@@ -77,10 +77,17 @@ class HomePage extends StatelessWidget {
                         x: continents.indexOf(continent),
                         barRods: [
                           BarChartRodData(
-                            toY: continent.brandCount.toDouble(),
-                            color: Color.fromARGB(255, 0, 0, 0),
-                            width: 16,
+                             toY: continent.brandCount.toDouble(),
+                             width: 16,
                             borderRadius: BorderRadius.circular(5),
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 81, 9, 9),
+                                Color.fromARGB(255, 139, 56, 10),
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
                           ),
                         ],
                       );
@@ -103,7 +110,7 @@ class HomePage extends StatelessWidget {
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12, // Reduced font size
-                                    color: Color.fromARGB(255, 38, 52, 59),
+                                    color: Color.fromARGB(255, 139, 56, 10),
                                   ),
                                 ),
                               ),
@@ -136,35 +143,106 @@ class HomePage extends StatelessWidget {
                 itemCount: countries.length,
                 itemBuilder: (context, index) {
                   return Card(
-                    margin:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                  //   margin:
+                  //       EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                  //   elevation: 4.0,
+                  //   shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(15)),
+                  //   child: ListTile(
+                  //     contentPadding:
+                  //         EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                  //     title: Text(
+                  //       countries[index].name,
+                  //       style: TextStyle(
+                  //         fontWeight: FontWeight.bold,
+                  //         fontSize: 16,
+                  //         color: const Color.fromARGB(255, 139, 56, 10),
+                  //       ),
+                  //     ),
+                  //     trailing: Icon(Icons.arrow_forward_ios,
+                  //         color: const Color.fromARGB(255, 0, 0, 0)),
+                  //     onTap: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //           builder: (context) =>
+                  //               CountryPage(country: countries[index]),
+                  //         ),
+                  //       );
+                  //     },
+                  //   ),
+                  // );
+
+                    margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                     elevation: 4.0,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
-                    child: ListTile(
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                      title: Text(
-                        countries[index].name,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Colors.blueAccent,
-                        ),
-                      ),
-                      trailing: Icon(Icons.arrow_forward_ios,
-                          color: Colors.blueAccent),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                CountryPage(country: countries[index]),
+                            builder: (context) => CountryPage(country: countries[index]),
                           ),
                         );
                       },
+                      splashColor: Colors.blueAccent.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(15),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.orange.shade300,
+                              Colors.red.shade400,
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 3,
+                              blurRadius: 5,
+                              offset: Offset(2, 3),
+                            ),
+                          ],
+                        ),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                          title: Text(
+                            countries[index].name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white,
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 4.0,
+                                  color: Colors.black.withOpacity(0.5),
+                                  offset: Offset(2, 2),
+                                ),
+                              ],
+                            ),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 4.0,
+                                color: Colors.black.withOpacity(0.5),
+                                offset: Offset(2, 2),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   );
+
+
                 },
               ),
             ),
