@@ -5,14 +5,14 @@ import 'country_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Continent> continents = [
-    Continent('Asia', 500),
-    Continent('Europe', 450),
-    Continent('North America', 400),
-    Continent('South America', 350),
-    Continent('Africa', 300),
-    Continent('Australia', 250),
-    Continent('Antarctica', 200),
-  ];
+  Continent('Asia', 700),
+  Continent('Europe', 600),
+  Continent('North America', 400),
+  Continent('South America', 250),
+  Continent('Africa', 200),
+  Continent('Australia', 150),
+  Continent('Antarctica', 100),
+];
 
    final List<Country> countries = [
   Country('Argentina', ['YPF', 'Banco Galicia', 'Telecom Argentina', 'Grupo Clarín']),
@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Brand App'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 109, 87, 87),
+        backgroundColor: Color.fromARGB(171, 126, 87, 194),
       ),
       body: Column(
         children: [
@@ -82,8 +82,8 @@ class HomePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5),
                             gradient: LinearGradient(
                               colors: [
-                                Color.fromARGB(255, 81, 9, 9),
-                                Color.fromARGB(255, 139, 56, 10),
+                                Color.fromARGB(242, 71, 27, 78),
+                                Color.fromARGB(255, 0, 0, 0), 
                               ],
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
@@ -104,13 +104,13 @@ class HomePage extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.only(top: 8.0),
                               child: Transform.rotate(
-                                angle: -0.5, // Rotate the labels by -0.5 radians (~28.6 degrees)
+                                angle: -0, // Rotate the labels by -0.5 radians (~28.6 degrees)
                                 child: Text(
                                   continents[value.toInt()].name,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 12, // Reduced font size
-                                    color: Color.fromARGB(255, 139, 56, 10),
+                                    fontSize: 7, // Reduced font size
+                                    color: Color.fromARGB(218, 0, 0, 0),
                                   ),
                                 ),
                               ),
@@ -142,41 +142,11 @@ class HomePage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: countries.length,
                 itemBuilder: (context, index) {
-                  return Card(
-                  //   margin:
-                  //       EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                  //   elevation: 4.0,
-                  //   shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(15)),
-                  //   child: ListTile(
-                  //     contentPadding:
-                  //         EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                  //     title: Text(
-                  //       countries[index].name,
-                  //       style: TextStyle(
-                  //         fontWeight: FontWeight.bold,
-                  //         fontSize: 16,
-                  //         color: const Color.fromARGB(255, 139, 56, 10),
-                  //       ),
-                  //     ),
-                  //     trailing: Icon(Icons.arrow_forward_ios,
-                  //         color: const Color.fromARGB(255, 0, 0, 0)),
-                  //     onTap: () {
-                  //       Navigator.push(
-                  //         context,
-                  //         MaterialPageRoute(
-                  //           builder: (context) =>
-                  //               CountryPage(country: countries[index]),
-                  //         ),
-                  //       );
-                  //     },
-                  //   ),
-                  // );
-
+                return Card(
                     margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                    elevation: 4.0,
+                    elevation: 8.0, // Increased elevation for a more pronounced shadow
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: InkWell(
                       onTap: () {
@@ -187,40 +157,33 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      splashColor: Colors.blueAccent.withOpacity(0.3),
+                      splashColor: Color.fromARGB(255, 0, 0, 0).withOpacity(0.3), // More pronounced splash color
                       borderRadius: BorderRadius.circular(15),
                       child: Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.orange.shade300,
-                              Colors.red.shade400,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
+                          color: Color.fromARGB(255, 33, 33, 33), // Dark charcoal background color
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              spreadRadius: 3,
-                              blurRadius: 5,
+                              color: Colors.black.withOpacity(0.4), // More prominent shadow
+                              spreadRadius: 4,
+                              blurRadius: 10,
                               offset: Offset(2, 3),
                             ),
                           ],
                         ),
                         child: ListTile(
-                          contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                          contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 22.0),
                           title: Text(
                             countries[index].name,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                              color: Colors.white,
+                              fontSize: 13, // Slightly larger font size for prominence
+                              color: const Color.fromARGB(255, 195, 195, 195), // White color for better contrast
                               shadows: [
                                 Shadow(
-                                  blurRadius: 4.0,
-                                  color: Colors.black.withOpacity(0.5),
+                                  blurRadius: 6.0,
+                                  color: Color.fromARGB(255, 101, 59, 113).withOpacity(0.6), // Darker shadow for text
                                   offset: Offset(2, 2),
                                 ),
                               ],
@@ -228,11 +191,12 @@ class HomePage extends StatelessWidget {
                           ),
                           trailing: Icon(
                             Icons.arrow_forward_ios,
-                            color: Colors.white,
+                            color: const Color.fromARGB(255, 181, 181, 181), // White icon for better contrast
+                            size: 20, // Slightly larger icon size for emphasis
                             shadows: [
                               Shadow(
-                                blurRadius: 4.0,
-                                color: Colors.black.withOpacity(0.5),
+                                blurRadius: 6.0,
+                                color: Colors.black.withOpacity(0.6),
                                 offset: Offset(2, 2),
                               ),
                             ],
@@ -241,8 +205,6 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   );
-
-
                 },
               ),
             ),
