@@ -3,18 +3,20 @@ import 'package:fl_chart/fl_chart.dart';
 import '../models/models.dart';
 import 'country_page.dart';
 
-double a = 0;
-
 class HomePage extends StatelessWidget {
   final List<Continent> continents = [
     Continent('Asia', 500),
     Continent('Europe', 450),
     Continent('North America', 400),
+    Continent('South America', 350),
+    Continent('Africa', 300),
+    Continent('Oceania', 250),
+    Continent('Antarctica', 200),
   ];
 
   final List<Country> countries = [
-    Country('USA', ['Brand A', 'Brand B', 'Brand C']),
-    Country('China', ['Brand D', 'Brand E', 'Brand F']),
+    Country('USA', ['Apple', 'Microsoft', 'Google', 'Amazon']),
+    Country('China', ['Huawei', 'ICBC', 'Tencent', 'China Construction Bank']),
     // Add more countries here...
   ];
 
@@ -29,7 +31,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           const SizedBox(
-            height: 15,
+            height: 25,
           ),
           Container(
             height: 300,
@@ -65,17 +67,20 @@ class HomePage extends StatelessWidget {
                           getTitlesWidget: (double value, TitleMeta meta) {
                             return Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                continents[value.toInt()].name,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                  color: Colors.blueGrey,
+                              child: Transform.rotate(
+                                angle: -0.5, // Rotate the labels by -0.5 radians (~28.6 degrees)
+                                child: Text(
+                                  continents[value.toInt()].name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12, // Reduced font size
+                                    color: Colors.blueGrey,
+                                  ),
                                 ),
                               ),
                             );
                           },
-                          reservedSize: 40,
+                          reservedSize: 60, // Increased reserved size to accommodate rotation
                         ),
                       ),
                       topTitles:
