@@ -14,11 +14,40 @@ class HomePage extends StatelessWidget {
     Continent('Antarctica', 200),
   ];
 
-  final List<Country> countries = [
-    Country('USA', ['Apple', 'Microsoft', 'Google', 'Amazon']),
-    Country('China', ['Huawei', 'ICBC', 'Tencent', 'China Construction Bank']),
+   final List<Country> countries = [
+  Country('Argentina', ['YPF', 'Banco Galicia', 'Telecom Argentina', 'Grupo Clarín']),
+  Country('Australia', ['BHP', 'Commonwealth Bank', 'Woolworths', 'Telstra']),
+  Country('Brazil', ['Petrobras', 'Vale', 'Itaú Unibanco', 'Ambev']),
+  Country('Canada', ['Shopify', 'Royal Bank of Canada', 'Scotiabank', 'Lululemon']),
+  Country('China', ['Huawei', 'ICBC', 'Tencent', 'China Construction Bank']),
+  Country('France', ['LVMH', 'L\'Oreal', 'Renault', 'Total']),
+  Country('Germany', ['Volkswagen', 'Siemens', 'BMW', 'Adidas']),
+  Country('India', ['Tata', 'Reliance', 'Infosys', 'Wipro']),
+  Country('Indonesia', ['Bank Mandiri', 'Telkom Indonesia', 'Gudang Garam', 'Indofood']),
+  Country('Italy', ['Fiat', 'Ferrari', 'Enel', 'Gucci']),
+  Country('Japan', ['Toyota', 'Sony', 'Honda', 'Panasonic']),
+  Country('Malaysia', ['Petronas', 'Maybank', 'CIMB', 'Sime Darby']),
+  Country('Mexico', ['Pemex', 'América Móvil', 'Grupo Bimbo', 'Cemex']),
+  Country('Netherlands', ['Shell', 'Unilever', 'Philips', 'Heineken']),
+  Country('Nigeria', ['Dangote Group', 'MTN Nigeria', 'Zenith Bank', 'Guaranty Trust Bank']),
+  Country('Philippines', ['PLDT', 'San Miguel Corporation', 'Ayala Corporation', 'Jollibee']),
+  Country('Russia', ['Gazprom', 'Lukoil', 'Sberbank', 'Rosneft']),
+  Country('Saudi Arabia', ['Saudi Aramco', 'SABIC', 'Al Rajhi Bank', 'Saudi Telecom Company']),
+  Country('Singapore', ['DBS Bank', 'OCBC Bank', 'SingTel', 'CapitaLand']),
+  Country('South Africa', ['Sasol', 'Naspers', 'MTN', 'Shoprite']),
+  Country('South Korea', ['Samsung', 'Hyundai', 'LG', 'SK Hynix']),
+  Country('Spain', ['Inditex (Zara)', 'Santander', 'BBVA', 'Iberdrola']),
+  Country('Sweden', ['IKEA', 'H&M', 'Volvo', 'Ericsson']),
+  Country('Switzerland', ['Nestlé', 'Roche', 'Novartis', 'UBS']),
+  Country('Thailand', ['PTT', 'Thai Airways', 'CP Group', 'Bangkok Bank']),
+  Country('Turkey', ['Turkish Airlines', 'Beko', 'Turkcell', 'Arçelik']),
+  Country('United Kingdom', ['BP', 'HSBC', 'Unilever', 'Vodafone']),
+  Country('USA', ['Apple', 'Microsoft', 'Google', 'Amazon']),
+  Country('Vietnam', ['Viettel', 'Vinamilk', 'Vingroup', 'Petrolimex'])
+];
+
+  
     // Add more countries here...
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +55,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Brand App'),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromARGB(255, 14, 26, 48),
       ),
       body: Column(
         children: [
@@ -49,7 +78,7 @@ class HomePage extends StatelessWidget {
                         barRods: [
                           BarChartRodData(
                             toY: continent.brandCount.toDouble(),
-                            color: Colors.blueAccent,
+                            color: Color.fromARGB(255, 0, 0, 0),
                             width: 16,
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -74,7 +103,7 @@ class HomePage extends StatelessWidget {
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12, // Reduced font size
-                                    color: Colors.blueGrey,
+                                    color: Color.fromARGB(255, 38, 52, 59),
                                   ),
                                 ),
                               ),
