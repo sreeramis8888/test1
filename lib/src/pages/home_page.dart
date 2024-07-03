@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
     Continent('North America', 400),
     Continent('South America', 350),
     Continent('Africa', 300),
-    Continent('Oceania', 250),
+    Continent('Australia', 250),
     Continent('Antarctica', 200),
   ];
 
