@@ -15,40 +15,37 @@ class HomePage extends StatelessWidget {
 ];
 
    final List<Country> countries = [
-  Country('Argentina', ['YPF', 'Banco Galicia', 'Telecom Argentina', 'Grupo Clarín']),
-  Country('Australia', ['BHP', 'Commonwealth Bank', 'Woolworths', 'Telstra']),
-  Country('Brazil', ['Petrobras', 'Vale', 'Itaú Unibanco', 'Ambev']),
-  Country('Canada', ['Shopify', 'Royal Bank of Canada', 'Scotiabank', 'Lululemon']),
-  Country('China', ['Huawei', 'ICBC', 'Tencent', 'China Construction Bank']),
-  Country('France', ['LVMH', 'L\'Oreal', 'Renault', 'Total']),
-  Country('Germany', ['Volkswagen', 'Siemens', 'BMW', 'Adidas']),
-  Country('India', ['Tata', 'Reliance', 'Infosys', 'Wipro']),
-  Country('Indonesia', ['Bank Mandiri', 'Telkom Indonesia', 'Gudang Garam', 'Indofood']),
-  Country('Italy', ['Fiat', 'Ferrari', 'Enel', 'Gucci']),
-  Country('Japan', ['Toyota', 'Sony', 'Honda', 'Panasonic']),
-  Country('Malaysia', ['Petronas', 'Maybank', 'CIMB', 'Sime Darby']),
-  Country('Mexico', ['Pemex', 'América Móvil', 'Grupo Bimbo', 'Cemex']),
-  Country('Netherlands', ['Shell', 'Unilever', 'Philips', 'Heineken']),
-  Country('Nigeria', ['Dangote Group', 'MTN Nigeria', 'Zenith Bank', 'Guaranty Trust Bank']),
-  Country('Philippines', ['PLDT', 'San Miguel Corporation', 'Ayala Corporation', 'Jollibee']),
-  Country('Russia', ['Gazprom', 'Lukoil', 'Sberbank', 'Rosneft']),
-  Country('Saudi Arabia', ['Saudi Aramco', 'SABIC', 'Al Rajhi Bank', 'Saudi Telecom Company']),
-  Country('Singapore', ['DBS Bank', 'OCBC Bank', 'SingTel', 'CapitaLand']),
-  Country('South Africa', ['Sasol', 'Naspers', 'MTN', 'Shoprite']),
-  Country('South Korea', ['Samsung', 'Hyundai', 'LG', 'SK Hynix']),
-  Country('Spain', ['Inditex (Zara)', 'Santander', 'BBVA', 'Iberdrola']),
-  Country('Sweden', ['IKEA', 'H&M', 'Volvo', 'Ericsson']),
-  Country('Switzerland', ['Nestlé', 'Roche', 'Novartis', 'UBS']),
-  Country('Thailand', ['PTT', 'Thai Airways', 'CP Group', 'Bangkok Bank']),
-  Country('Turkey', ['Turkish Airlines', 'Beko', 'Turkcell', 'Arçelik']),
-  Country('United Kingdom', ['BP', 'HSBC', 'Unilever', 'Vodafone']),
-  Country('USA', ['Apple', 'Microsoft', 'Google', 'Amazon']),
-  Country('Vietnam', ['Viettel', 'Vinamilk', 'Vingroup', 'Petrolimex'])
-];
 
-  
-    // Add more countries here...
-
+    Country('Argentina', ['YPF', 'Banco Galicia', 'Telecom Argentina', 'Grupo Clarín']),
+    Country('Australia', ['BHP', 'Commonwealth Bank', 'Woolworths', 'Telstra']),
+    Country('Brazil', ['Petrobras', 'Vale', 'Itaú Unibanco', 'Ambev']),
+    Country('Canada', ['Shopify', 'Royal Bank of Canada', 'Scotiabank', 'Lululemon']),
+    Country('China', ['Huawei', 'ICBC', 'Tencent', 'China Construction Bank']),
+    Country('France', ['LVMH', 'L\'Oreal', 'Renault', 'Total']),
+    Country('Germany', ['Volkswagen', 'Siemens', 'BMW', 'Adidas']),
+    Country('India', ['Tata', 'Reliance', 'Infosys', 'Wipro']),
+    Country('Indonesia', ['Bank Mandiri', 'Telkom Indonesia', 'Gudang Garam', 'Indofood']),
+    Country('Italy', ['Fiat', 'Ferrari', 'Enel', 'Gucci']),
+    Country('Japan', ['Toyota', 'Sony', 'Honda', 'Panasonic']),
+    Country('Malaysia', ['Petronas', 'Maybank', 'CIMB', 'Sime Darby']),
+    Country('Mexico', ['Pemex', 'América Móvil', 'Grupo Bimbo', 'Cemex']),
+    Country('Netherlands', ['Shell', 'Unilever', 'Philips', 'Heineken']),
+    Country('Nigeria', ['Dangote Group', 'MTN Nigeria', 'Zenith Bank', 'Guaranty Trust Bank']),
+    Country('Philippines', ['PLDT', 'San Miguel Corporation', 'Ayala Corporation', 'Jollibee']),
+    Country('Russia', ['Gazprom', 'Lukoil', 'Sberbank', 'Rosneft']),
+    Country('Saudi Arabia', ['Saudi Aramco', 'SABIC', 'Al Rajhi Bank', 'Saudi Telecom Company']),
+    Country('Singapore', ['DBS Bank', 'OCBC Bank', 'SingTel', 'CapitaLand']),
+    Country('South Africa', ['Sasol', 'Naspers', 'MTN', 'Shoprite']),
+    Country('South Korea', ['Samsung', 'Hyundai', 'LG', 'SK Hynix']),
+    Country('Spain', ['Inditex (Zara)', 'Santander', 'BBVA', 'Iberdrola']),
+    Country('Sweden', ['IKEA', 'H&M', 'Volvo', 'Ericsson']),
+    Country('Switzerland', ['Nestlé', 'Roche', 'Novartis', 'UBS']),
+    Country('Thailand', ['PTT', 'Thai Airways', 'CP Group', 'Bangkok Bank']),
+    Country('Turkey', ['Turkish Airlines', 'Beko', 'Turkcell', 'Arçelik']),
+    Country('United Kingdom', ['BP', 'HSBC', 'Unilever', 'Vodafone']),
+    Country('USA', ['Apple', 'Microsoft', 'Google', 'Amazon']),
+    Country('Vietnam', ['Viettel', 'Vinamilk', 'Vingroup', 'Petrolimex']),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +75,7 @@ class HomePage extends StatelessWidget {
                         barRods: [
                           BarChartRodData(
                              toY: continent.brandCount.toDouble(),
-                             width: 25,
+                             width: 20,
                             borderRadius: BorderRadius.circular(5),
                             gradient: LinearGradient(
                               colors: [
@@ -135,7 +132,6 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          // List of countries
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -177,7 +173,7 @@ class HomePage extends StatelessWidget {
                           title: Text(
                             countries[index].name,
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.normal,
                               fontSize: 13, // Slightly larger font size for prominence
                               color: Color.fromARGB(255, 187, 180, 180), // White color for better contrast
                               // shadows: [
@@ -191,12 +187,12 @@ class HomePage extends StatelessWidget {
                           ),
                           trailing: Icon(
                             Icons.arrow_forward_ios,
-                            color: const Color.fromARGB(255, 181, 181, 181), // White icon for better contrast
+                            color: Color.fromARGB(255, 158, 158, 158), // White icon for better contrast
                             size: 20, // Slightly larger icon size for emphasis
                             shadows: [
                               Shadow(
                                 blurRadius: 6.0,
-                                color: Colors.black.withOpacity(0.6),
+                                color: Color.fromARGB(255, 131, 131, 131).withOpacity(0.6),
                                 offset: Offset(2, 2),
                               ),
                             ],
