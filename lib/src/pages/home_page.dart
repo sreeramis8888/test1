@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Brand App'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(171, 126, 87, 194),
+        backgroundColor: Color.fromARGB(255, 146, 140, 140),
       ),
       body: Column(
         children: [
@@ -78,11 +78,11 @@ class HomePage extends StatelessWidget {
                         barRods: [
                           BarChartRodData(
                              toY: continent.brandCount.toDouble(),
-                             width: 16,
+                             width: 25,
                             borderRadius: BorderRadius.circular(5),
                             gradient: LinearGradient(
                               colors: [
-                                Color.fromARGB(242, 71, 27, 78),
+                                Color.fromARGB(255, 94, 86, 86),
                                 Color.fromARGB(255, 0, 0, 0), 
                               ],
                               begin: Alignment.bottomCenter,
@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
                                   continents[value.toInt()].name,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 7, // Reduced font size
+                                    fontSize: 7.5, 
                                     color: Color.fromARGB(218, 0, 0, 0),
                                   ),
                                 ),
@@ -161,11 +161,11 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 33, 33, 33), // Dark charcoal background color
+                          color: Color.fromARGB(255, 0, 0, 0), // Dark charcoal background color
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.4), // More prominent shadow
+                              color: Color.fromARGB(255, 107, 106, 106).withOpacity(0.4), // More prominent shadow
                               spreadRadius: 4,
                               blurRadius: 10,
                               offset: Offset(2, 3),
@@ -179,14 +179,14 @@ class HomePage extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 13, // Slightly larger font size for prominence
-                              color: const Color.fromARGB(255, 195, 195, 195), // White color for better contrast
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 6.0,
-                                  color: Color.fromARGB(255, 101, 59, 113).withOpacity(0.6), // Darker shadow for text
-                                  offset: Offset(2, 2),
-                                ),
-                              ],
+                              color: Color.fromARGB(255, 187, 180, 180), // White color for better contrast
+                              // shadows: [
+                              //   Shadow(
+                              //     blurRadius: 6.0,
+                              //     color: Color.fromARGB(255, 147, 145, 145).withOpacity(0.6), // Darker shadow for text
+                              //     offset: Offset(2, 2),
+                              //   ),
+                              // ],
                             ),
                           ),
                           trailing: Icon(
